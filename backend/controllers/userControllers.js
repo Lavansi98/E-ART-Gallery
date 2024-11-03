@@ -26,7 +26,7 @@ const loginUser = async (req, res) => {
       res.json({ success: false, message: "Invalid credentials" });
     }
   } catch {
-    console.log(error), res.json({ succes: false, message: error.message });
+    console.log(error), res.json({ success: false, message: error.message });
   }
 };
 //Route for user Register
@@ -37,18 +37,18 @@ const registerUser = async (req, res) => {
     // checking user email already exists
     const exists = await userModel.findOne({ email });
     if (exists) {
-      return res.json({ succes: false, message: "user email already exists" });
+      return res.json({ success: false, message: "user email already exists" });
     }
     // validation
     if (!validator.isEmail(email)) {
       return res.json({
-        succes: false,
+        success: false,
         message: "Please enter valid email",
       });
     }
     if (password.length < 8) {
       return res.json({
-        succes: false,
+        success: false,
         message: "Please enter a strong password",
       });
     }
@@ -67,7 +67,7 @@ const registerUser = async (req, res) => {
       token,
     });
   } catch (error) {
-    console.log(error), res.json({ succes: false, message: error.message });
+    console.log(error), res.json({ success: false, message: error.message });
   }
 };
 
@@ -86,7 +86,7 @@ const adminLogin = async (req, res) => {
       res.json({ success: false, message: "Invalid credentials" });
     }
   } catch (error) {
-    console.log(error), res.json({ succes: false, message: error.message });
+    console.log(error), res.json({ success: false, message: error.message });
   }
 };
 // Function for list all user
@@ -96,7 +96,7 @@ const listUsers = async (req, res) => {
     res.json({ success: true, user });
     console.log(user);
   } catch (error) {
-    console.log(error), res.json({ succes: false, message: error.message });
+    console.log(error), res.json({ success: false, message: error.message });
   }
 };
 // Function for removing user
@@ -105,7 +105,7 @@ const removeUser = async (req, res) => {
     await userModel.findByIdAndDelete(req.body.id);
     res.json({ success: true, message: "User removed" });
   } catch (error) {
-    console.log(error), res.json({ succes: false, message: error.message });
+    console.log(error), res.json({ success: false, message: error.message });
   }
 };
 export { loginUser, registerUser, adminLogin, listUsers, removeUser };

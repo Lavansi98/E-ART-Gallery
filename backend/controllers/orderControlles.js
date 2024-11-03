@@ -24,7 +24,7 @@ const placeOrder = async (req, res) => {
     await userModel.findByIdAndUpdate(userId, { cartData: {} });
     res.json({ success: true, message: "Order Placed" });
   } catch (error) {
-    console.log(error), res.json({ succes: false, message: error.message });
+    console.log(error), res.json({ success: false, message: error.message });
   }
 };
 
@@ -104,7 +104,7 @@ const verifyStripe = async (req, res) => {
       res.json({ success: false });
     }
   } catch (error) {
-    console.log(error), res.json({ succes: false, message: error.message });
+    console.log(error), res.json({ success: false, message: error.message });
   }
 };
 
@@ -118,7 +118,7 @@ const allOrders = async (req, res) => {
     
   } catch (error) {
     console.log(error);
-    console.log(error), res.json({ succes: false, message: error.message });
+    console.log(error), res.json({ success: false, message: error.message });
   }
 };
 // User Order Data for Frontend
@@ -129,7 +129,7 @@ const userOrders = async (req, res) => {
     res.json({ success: true, orders,     
     });
   } catch (error) {
-    console.log(error), res.json({ succes: false, message: error.message });
+    console.log(error), res.json({ success: false, message: error.message });
   }
 };
 // update order status from Admin panel
@@ -139,7 +139,7 @@ const updateStatus = async (req, res) => {
     await orderModel.findByIdAndUpdate(orderId, { status })
     res.json({ success: true, message: "status updates" });
   } catch (error) {
-    res.json({ succes: false, message: error.message });
+    res.json({ success: false, message: error.message });
   }
 };
 export {

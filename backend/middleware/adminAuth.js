@@ -17,7 +17,7 @@ const adminAuth = async (req, res, next) => {
     }
     next();
   } catch (error) {
-    res.json({ succes: false, message: error.message });
+    res.json({ success: false, message: error.message });
   }
 };
 export default adminAuth;

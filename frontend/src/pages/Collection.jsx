@@ -96,7 +96,7 @@ const Collection = () => {
         <div className="border border-gray-300 pl-5 py-3 my-5 sm:block">
           <p className="mb-3 text-sm font-medium">ARTIST</p>
           <div className="flex flex-col gap-2 text-base font-light text-gray-700">
-            {['Demi', 'Liya', 'Sahana'].map((artistName) => (
+            {['Demi','Sahana','Lavansi','Kokul'].map((artistName) => (
               <label key={artistName} className="flex gap-2 cursor-pointer">
                 <input
                   className="w-4 h-4"

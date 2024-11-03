@@ -9,11 +9,11 @@ const BestSeller = () => {
     const [bestseller, setBestseller] = useState([]);
 
     useEffect(()=>{
-        console.log(products);
+        // console.log(products);
         
         const bestProduct = products.filter((item)=>(item.bestseller))
         setBestseller(bestProduct.slice(0,5));
-        console.log(bestProduct);
+        // console.log(bestProduct);
         
         
     },[products])

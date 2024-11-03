@@ -4,7 +4,6 @@ import {
   listProducts,
   removeProduct,
   singleProduct,
-  updateData,
 } from "../controllers/product Controllers.js";
 import upload from "../middleware/multer.js";
 import adminAuth from "../middleware/adminAuth.js";
@@ -12,7 +11,6 @@ import adminAuth from "../middleware/adminAuth.js";
 const productRouter = express.Router();
 
 productRouter.get("/list", listProducts);
-productRouter.put("/update/:id", updateData);
 
 productRouter.post("/remove", adminAuth, removeProduct);
 productRouter.post(

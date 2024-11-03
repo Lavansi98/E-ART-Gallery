@@ -2,8 +2,8 @@ import Stripe from "stripe";
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 //global variables
-const currency = "inr";
-const deliveryCharge = 10;
+const currency = "lkr";
+const deliveryCharge = 200;
 // gateway initialize
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 // placing orders using COD Method

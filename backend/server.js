@@ -31,3 +31,4 @@ app.get('/',(req,res)=>
     {res.send("api working")}
 )
 app.listen(port,()=>console.log('server started on port : '+ port))
+app.timeout = 120000;

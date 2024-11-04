@@ -49,27 +49,20 @@ const Product = () => {
             {/* .....Product Info .... */}
             <div className='flex-1'>
                   <h1 className='font-medium text-2xl mt-2 text-red-800'>{productData.name}</h1>
-                  {/* <div className='flex items-center gap-1 mt-2'>
-                      <img src={assets.star_icon} alt="star icon" className='w-3 5' />
-                      <img src={assets.star_icon} alt="star icon" className='w-3 5' />
-                      <img src={assets.star_icon} alt="star icon" className='w-3 5' />
-                      <img src={assets.star_icon} alt="star icon" className='w-3 5' />
-                      <img src={assets.star_dull_icon} alt="star icon" className='w-3 5' />
-                      <p className='pl-2'>(122)</p>
-                  </div> */}
-
-                  <p className='mt-5 text-3xl font-medium'>{currency} {productData.price}</p>
                   <p className='mt-5 text-gray-500 md:w-4/5'>{productData.description}</p>
+                  <p className='mt-5 text-3xl font-medium'>{currency} {productData.price}</p>
+                  <p className='mt-2 text-gray-500 md:w-4/5'>by : {productData.subCategory}</p>
+        
                   <div className='flex flex-col gap-4 my-8'>
                       <p>Select Size</p>
                       <div className='flex gap-2'>
                         {productData.sizes.map((item, index)=>(
-                          <button onClick={()=>setSize(item)} className={`border py-2 px-4 bg-gray-100 ${item === size ? 'border-yellow-500' : ''}`} key={index}>{item}</button>
+                          <button onClick={()=>setSize(item)} className={`border-2 py-2 px-4 bg-gray-100 ${item === size ? 'border-yellow-500' : ''}`} key={index}>{item}</button>
                         ))}
                       </div>
                   </div>
                   
-                  <button onClick={()=>addToCart(productData._id, size)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700 rounded-lg'>ADD TO CART</button>
+                  <button onClick={()=>addToCart(productData._id, size)} className='bg-teal-600 text-white px-8 py-3 text-sm active:bg-yellow-500 rounded-lg'>ADD TO CART</button>
                   <hr className='mt-8 sm:w-4/5' />
             </div>
         </div>

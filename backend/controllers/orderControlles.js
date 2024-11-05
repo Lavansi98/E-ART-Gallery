@@ -32,7 +32,7 @@ const placeOrder = async (req, res) => {
 
 // placing orders using String Method
 const placeOrderStripe = async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   try {
     
   

@@ -29,7 +29,7 @@ const addTocart = async (req, res) => {
 };
 //update product to userCart
 const updateCart = async (req, res) => {
-  console.log("update");
+  // console.log("update");
   
   try {
     const { userId, itemId, size, quantity } = req.body;

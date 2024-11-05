@@ -8,8 +8,8 @@ import { assets } from '../assets/assets';
 
 const Orders = ({token}) => {
   const [orders, setOrders] = useState([]);
-console.log(orders);
-console.log(token);
+// console.log(orders);
+// console.log(token);
 
 
   const fetchAllOrders = async () => {
@@ -34,7 +34,7 @@ console.log(token);
 
   const statusHandler = async (event, orderId) => {
     try {
-      console.log(orderId);
+      // console.log(orderId);
       
       const response = await axios.post(backendUrl + '/api/order/status', {orderId, status:event.target.value},{headers:{token}})
       console.log(event.target.value);
@@ -86,7 +86,7 @@ console.log(token);
                 <p className='text-sm sm:text-[15px]'>Items : {order.items.length}</p>
                 <p className='mt-3'>Method : {order.paymentMethod}</p>
                 <p>Payment : {order.payment ? 'Done' : 'Pending'}</p>
-                <p>Date : {new Date(order.Date).toLocaleDateString}</p>
+                <p>Date :{ new Date(order.date).toLocaleDateString()}</p>
               </div>
               <p className='text-sm sm:text-[15px]'>{currency} {order.amount}</p>
               <select onChange={(event)=>statusHandler(event,order._id)} value={order.status} className='p-2 font-semibold'>

@@ -67,6 +67,17 @@ const Navbar = () => {
         </ul>
 
         <div className='flex items-center gap-6'>
+        <NavLink
+            to='/community'
+            className={({ isActive }) =>
+              isActive
+                ? 'relative flex items-center justify-center px-2 py-1 bg-yellow-500 text-black text-base rounded-full font-bold shadow-lg'
+                : 'relative flex items-center justify-center px-2 py-1 bg-yellow-500 text-white text-base rounded-full hover:bg-teal-500 shadow-lg'
+            }
+          >
+            <span>Join With Us</span>
+          </NavLink>
+
           <img onClick={() => setShowSearch(true)} src={assets.search_icon} className='w-5 cursor-pointer' alt="search icon" />
 
           <div className='relative group'>
@@ -110,6 +121,8 @@ const Navbar = () => {
           <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/collection'>COLLECTION</NavLink>
           <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/about'>ABOUT US</NavLink>
           <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/contact'>CONTACT US</NavLink>
+          <NavLink onClick={() => setVisible(false)} className='py-2 pl-6 border' to='/community'>Join With Us</NavLink>
+
         </div>
       </div>
     </div>

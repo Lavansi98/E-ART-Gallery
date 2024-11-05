@@ -18,6 +18,7 @@ const PlaceOrder = () => {
     delivery_fee,
     products,
   } = useContext(ShopContext);
+  
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",

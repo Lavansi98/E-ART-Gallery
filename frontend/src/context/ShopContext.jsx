@@ -7,7 +7,7 @@ export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
 
-    const currency = 'Rs.  ';
+    const currency = 'Rs  ';
     const delivery_fee = 200;
     const backendUrl = import.meta.env.VITE_BACKEND_URL
     const [search, setSearch] = useState('');
@@ -90,11 +90,7 @@ const ShopContextProvider = (props) => {
         }
     }
 
-
-    
-
-
-    const getProductsData = async () => {
+   const getProductsData = async () => {
         try {
             const response = await axios.get(backendUrl + '/api/product/list')
             // console.log(response.data)
@@ -113,16 +109,13 @@ const ShopContextProvider = (props) => {
         let totalAmount = 0;
         for (const items in cartItems){
             let itemInfo = products.find((product)=> product._id === items);
-            // console.log(itemInfo.price);
-            
-            // console.log("itemInfo"+ itemInfo);
+           
             
             for (const item in cartItems[items]){
                 try {
                     if (cartItems[items][item] > 0) {
                         totalAmount += itemInfo.price * cartItems[items][item]
                     }
-                    // console.log("totalAmount"+totalAmount);
                     
                 } catch (error) {
                     toast.error(error.message)

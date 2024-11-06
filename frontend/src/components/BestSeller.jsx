@@ -21,7 +21,7 @@ const BestSeller = () => {
     return (
         <div className="my-10 mx-5">
             <div className="text-center text-3xl py-8">
-                <Title text1="BEST" text2="ARTISTS" />
+                <Title text1="BEST" text2="ART" />
                 <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
                     Explore our best-selling products, handpicked by art enthusiasts just like you. These top choices showcase the most sought-after pieces, reflecting the creativity and talent of our local artists.
                 </p>
